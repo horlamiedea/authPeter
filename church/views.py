@@ -52,3 +52,9 @@ class Event(ListView):
     model = Events
     paginate_by = 4
     template_name = 'event.html'
+
+
+class Sermonss(ListView):
+    model = Sermon
+    paginate_by = 4
+    template_name = 'sermon.html'
