@@ -1,2 +1,1 @@
-
-web:gunicorn peter.wsgi
+web:gunicorn peter.wsgi 
