@@ -1,68 +1,78 @@
 <footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="widget">
-                    <h3 class="widget-title">Our address</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi perspiciatis magnam, ab ipsa laboriosam tempore tenetur, aliquid repellat, ex cum dicta reiciendis accusamus. Omnis repudiandae quasi mollitia, iusto odio dignissimos.
-                    </p>
-                    <ul class="address">
-                        <li>
-                            <i class="fa fa-map-marker"></i> Moniya Ibadan Oyo state
-                        </li>
-                        <li><i class="fa fa-phone"></i> (425) 853 442 552</li>
-                        <li><i class="fa fa-envelope"></i> info@yourchurch.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="widget">
-                    <h3 class="widget-title">Topics from last meeting</h3>
-                    <ul class="bullet">
-                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                        <li>
-                            <a href="#">Consectetur adipisicing elit quis nostrud</a>
-                        </li>
-                        <li>
-                            <a href="#">Eiusmod tempor incididunt ut labore et dolore magna</a>
-                        </li>
-                        <li><a href="#">Ut enim ad minim veniam cillum</a></li>
-                        <li>
-                            <a href="#">Exercitation ullamco laboris nisi ut aliquip</a>
-                        </li>
-                        <li>
-                            <a href="#">Duis aute irure dolor in reprehenderit in voluptate</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="widget">
-                    <h3 class="widget-title">Contact form</h3>
-                    <form action="{% url 'home' %}" method="post" class="contact-form">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" name="name" placeholder="Your name..." required />
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="email" placeholder="Email..." required />
-                            </div>
-                        </div>
-
-                        <textarea name="message" placeholder="Your message..." required></textarea>
-                        <div class="text-right">
-                            <input type="submit" name="submit" value="Send message" />
-                        </div>
-                    </form>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="widget">
+          <h3 class="widget-title">Our address</h3>
+          <p>
+            Plot 8, Oluseyi Avenue opp. Omilabu junction Ajobo, Arulogun Road,
+            Ojoo
+          </p>
+          <ul class="address">
+            <li>
+              <i class="fa fa-map-marker"></i>P.O Box 14005, U.I Ibadan, Nigeria
+            </li>
+            <li><i class="fa fa-phone"></i> (234)7038647665</li>
+            <li><i class="fa fa-phone"></i> (234)8063900013</li>
+            <li>
+              <i class="fa fa-envelope"></i>evidenceofchristvictory@gmail.com
+            </li>
+          </ul>
         </div>
-        <!-- .row -->
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <h3 class="widget-title">Topics from last meeting</h3>
+          <ul class="bullet">
+            {% for sermon in pags_obj %}
+            <li><a href="#">{{ sermon.title }}</a></li>
+            <span>
+              <a href="#">{{ sermon.date }}</a>
+            </span>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <h3 class="widget-title">Contact form</h3>
+          <form action="{% url 'home' %}" method="post" class="contact-form">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name..."
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email..."
+                  required
+                />
+              </div>
+            </div>
 
-        <p class="colophon">Copyright 2021 True Church. All right reserved</p>
+            <textarea
+              name="message"
+              placeholder="Your message..."
+              required
+            ></textarea>
+            <div class="text-right">
+              <input type="submit" name="submit" value="Send message" />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <!-- .container -->
+    <!-- .row -->
+
+    <p class="colophon">Copyright 2021 True Church. All right reserved</p>
+  </div>
+  <!-- .container -->
 </footer>
 <!-- .site-footer -->
