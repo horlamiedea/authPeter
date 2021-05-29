@@ -31,40 +31,47 @@
   </head>
 
   <body>
+    <div class="mt-5 pt-4">
+      {% if messages %} {% for message in messages %}
+      <div
+        class="alert alert-{{ message.tags }} alert-dismissible fade show"
+        role="alert"
+      >
+        {{ message }}
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %} {% endif %}
+    </div>
     <div class="site-content">
       <header class="site-header">
         <div class="container">
           <a href="#" class="branding">
             <img src="{% static 'images/logo.png' %}" alt="" class="logo" />
-            <h1 class="site-title">True Church</h1>
+            <h1 class="site-title">Christ Church</h1>
           </a>
 
           <div class="main-navigation">
             <button class="menu-toggle"><i class="fa fa-bars"></i> Menu</button>
             <ul class="menu">
               <li class="menu-item current-menu-item">
-                <a href="{% url 'home' %}"
-                  >Homepage <small>Lorem ipsum</small></a
-                >
+                <a href="{% url 'home' %}">Homepage</a>
               </li>
+              <li class="menu-item"><a href="#">Pastors</a></li>
               <li class="menu-item">
-                <a href="#">Pastors <small>Cupidatat non proident</small></a>
+                <a href="{% url 'sermon' %}">Seremons</a>
               </li>
+              <li class="menu-item"><a href="{% url 'event' %}">Events</a></li>
+              <li class="menu-item"><a href="families.html">Families</a></li>
+              <li class="menu-item"><a href="#">Contact</a></li>
               <li class="menu-item">
-                <a href="{% url 'sermon' %}"
-                  >Seremons <small>Laboris nisi aliquip</small></a
-                >
-              </li>
-              <li class="menu-item">
-                <a href=" {% url 'event' %} "
-                  >Events <small>Sunt in culpa</small></a
-                >
-              </li>
-              <li class="menu-item">
-                <a href="families.html">Families <small>Aute irure</small></a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Contact <small>lorem ipsum</small></a>
+                <a href="{% url 'visit' %}">First Timers</a>
               </li>
             </ul>
           </div>
@@ -72,6 +79,7 @@
           <div class="mobile-navigation"></div>
         </div>
       </header>
+      <!-- .site-header -->
       <!-- .site-header -->
 
       <div class="hero">

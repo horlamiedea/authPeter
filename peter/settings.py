@@ -26,7 +26,8 @@ SECRET_KEY = '6z!=f0b9a!eb43*zkkk)&o5o+@7-8+^d*yfa8#6+w&5ip6@_32'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['evidenceofchristvictory.herokuapp.com',
+                 "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'church',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
