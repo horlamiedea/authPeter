@@ -41,6 +41,8 @@ class Sermon(models.Model):
                              on_delete=models.CASCADE)
 
     title = models.CharField(max_length=100)
+    text = models.TextField(blank=True, null=True)
+    mp3 = models.FileField(blank=True, null=True)
     date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
