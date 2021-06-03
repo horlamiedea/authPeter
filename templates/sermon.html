@@ -47,8 +47,10 @@
                     <i class="fa fa-user"></i> {{ sermon.user }}
                   </div>
                   <div class="date">
-                    <i class="fa fa-calendar"></i>
-                    <a href="{{ sermon.mp3.url }}">{{ sermon.mp3 }}</a>
+                    <i class="fa fa-music"></i>
+                    {% if sermon.mp3 %}
+                    <a href="{{ sermon.mp3.url }}" download>{{ sermon.mp3 }}</a>
+                    {% endif %}
                   </div>
                 </div>
               </div>
